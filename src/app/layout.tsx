@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 import "./globals.css";
-import { Footer } from "@/components/home";
+import { SiteFooter, SiteHeader } from "@/components/site";
 
 const gilroy = localFont({
   src: [
@@ -45,10 +45,11 @@ export default function RootLayout({
       className={`${gilroy.variable} h-full scroll-smooth antialiased`}
     >
       <body className="page-flat min-h-full">
-        {children}
-        <div>
-          <Footer />
+        <SiteHeader />
+        <div className="page-flat mx-auto max-w-[1400px] px-4 pb-8 pt-[96px] sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1184px]">{children}</div>
         </div>
+        <SiteFooter />
       </body>
     </html>
   );

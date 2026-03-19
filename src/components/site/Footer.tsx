@@ -37,12 +37,6 @@ export function SiteFooter() {
                   {item.label}
                 </Link>
               ))}
-              <Link href="#" className="font-gilroy-semibold text-[15px] leading-7 text-[#e6e6e6] transition hover:text-white">
-                {siteFooter.privacyLabel}
-              </Link>
-              <Link href="#" className="font-gilroy-semibold text-[15px] leading-7 text-[#e6e6e6] transition hover:text-white">
-                {siteFooter.termsLabel}
-              </Link>
             </div>
           </div>
 

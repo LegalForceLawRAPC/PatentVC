@@ -1,8 +1,0 @@
-export { AboutUsRoutePage } from "./AboutUsRoutePage"
-export { ApplyRoutePage } from "./ApplyRoutePage"
-export { ConsultRoutePage } from "./ConsultRoutePage"
-export { DealMemoRoutePage } from "./DealMemoRoutePage"
-export { FocusAreasRoutePage } from "./FocusAreasRoutePage"
-export { InvestWithUsPage } from "./InvestWithUsPage"
-export { RouteBanner } from "./RouteBanner"
-export { TeamRoutePage } from "./TeamRoutePage"
