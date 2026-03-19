@@ -1,6 +1,15 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 
 import { dealMemoPage } from "@/_config/routes"
+
+export const metadata: Metadata = {
+  title: "Deal Memo",
+  description: "Review PatentVC's deal memo and limited partner investment opportunity details.",
+  alternates: {
+    canonical: "/deal-memo",
+  },
+}
 
 export default function DealMemoRoute() {
   const [introSection, ...restSections] = dealMemoPage.sections

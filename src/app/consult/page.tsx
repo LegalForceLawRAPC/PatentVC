@@ -1,6 +1,15 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 
 import { consultPage } from "@/_config/routes"
+
+export const metadata: Metadata = {
+  title: "Consult",
+  description: "Schedule a consultation with PatentVC to discuss startup funding and intellectual property strategy.",
+  alternates: {
+    canonical: "/consult",
+  },
+}
 
 export default function ConsultRoute() {
   return (

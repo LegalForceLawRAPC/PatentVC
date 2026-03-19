@@ -1,8 +1,6 @@
 export { AddressSection } from "./AddressSection"
 export { ContactSection } from "./ContactSection"
-export { Footer } from "./Footer"
 export { FounderSection } from "./FounderSection"
-export { Header } from "./Header"
 export { HeroSection } from "./HeroSection"
 export { MetricsSection } from "./MetricsSection"
 export { SuccessSection } from "./SuccessSection"

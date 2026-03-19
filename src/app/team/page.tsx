@@ -1,6 +1,15 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 
 import { teamPage } from "@/_config/routes"
+
+export const metadata: Metadata = {
+  title: "Our Team",
+  description: "Meet the PatentVC team and learn about the founders and operators behind the firm.",
+  alternates: {
+    canonical: "/team",
+  },
+}
 
 export default function TeamRoute() {
   return (

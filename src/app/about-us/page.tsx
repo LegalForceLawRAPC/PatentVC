@@ -1,7 +1,16 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import { MapPin } from "lucide-react"
 
 import { aboutPage } from "@/_config/routes"
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn about PatentVC, our origins, and our locations in Mountain View and Arizona.",
+  alternates: {
+    canonical: "/about-us",
+  },
+}
 
 export default function AboutUsRoute() {
   return (

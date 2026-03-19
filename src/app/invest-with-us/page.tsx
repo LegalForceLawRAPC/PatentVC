@@ -1,7 +1,16 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
 import { investPage } from "@/_config/routes"
+
+export const metadata: Metadata = {
+  title: "For Limited Partners",
+  description: "Discover PatentVC's limited partner investment thesis, returns outlook, and value proposition.",
+  alternates: {
+    canonical: "/invest-with-us",
+  },
+}
 
 export default function InvestWithUsRoute() {
   return (

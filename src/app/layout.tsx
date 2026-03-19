@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
+import type { Metadata } from "next"
+import localFont from "next/font/local"
 
-import "./globals.css";
-import { SiteFooter, SiteHeader } from "@/components/site";
+import "./globals.css"
+import { SiteFooter, SiteHeader } from "@/components/site"
 
 const gilroy = localFont({
   src: [
@@ -24,20 +24,41 @@ const gilroy = localFont({
   ],
   variable: "--font-gilroy",
   display: "swap",
-});
+})
 
 export const metadata: Metadata = {
-  title: "PatentVC",
-  description: "We offer patent protection for venture backed companies.",
+  metadataBase: new URL("https://www.patentvc.com"),
+  title: {
+    default: "PatentVC",
+    template: "%s | PatentVC",
+  },
+  description: "PatentVC supports venture-backed companies with investment, IP strategy, and startup-focused legal expertise.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "PatentVC",
+    title: "PatentVC",
+    description: "PatentVC supports venture-backed companies with investment, IP strategy, and startup-focused legal expertise.",
+    images: [{ url: "/patentvc/hero-photo.png", width: 814, height: 690, alt: "PatentVC" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PatentVC",
+    description: "PatentVC supports venture-backed companies with investment, IP strategy, and startup-focused legal expertise.",
+    images: ["/patentvc/hero-photo.png"],
+  },
   icons: {
     icon: "/patentvc/favicon.png",
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html
@@ -52,5 +73,5 @@ export default function RootLayout({
         <SiteFooter />
       </body>
     </html>
-  );
+  )
 }

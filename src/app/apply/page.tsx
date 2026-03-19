@@ -1,7 +1,16 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 
 import { applyPage } from "@/_config/routes"
 import { ApplyLeadForm } from "@/components/forms/ApplyLeadForm"
+
+export const metadata: Metadata = {
+  title: "Apply",
+  description: "Apply to PatentVC and share your startup details for funding and IP support review.",
+  alternates: {
+    canonical: "/apply",
+  },
+}
 
 export default function ApplyRoute() {
   return (

@@ -1,7 +1,16 @@
+import type { Metadata } from "next"
 import type { ReactNode } from "react"
 import { Bolt, Bot, BrainCircuit, CarFront, Cpu, HeartPulse, Shield, Wifi } from "lucide-react"
 
 import { focusAreasPage } from "@/_config/routes"
+
+export const metadata: Metadata = {
+  title: "Focus Areas",
+  description: "Explore the technologies PatentVC invests in, from AI and autonomous systems to cybersecurity and robotics.",
+  alternates: {
+    canonical: "/focus-areas",
+  },
+}
 
 const focusIcons = {
   brain: BrainCircuit,

@@ -1,3 +1,5 @@
+import type { Metadata } from "next"
+
 import {
   AddressSection,
   ContactSection,
@@ -8,7 +10,15 @@ import {
   ServicesSection,
   WhyUsSection,
   FocusAreasSection,
-} from "@/components/home";
+} from "@/components/home"
+
+export const metadata: Metadata = {
+  title: "PatentVC",
+  description: "PatentVC co-invests with startups and incubators while helping teams build durable patent and trademark assets.",
+  alternates: {
+    canonical: "/",
+  },
+}
 
 export default function HomePage() {
   return (
@@ -23,5 +33,5 @@ export default function HomePage() {
       <FounderSection />
       <AddressSection />
     </>
-  );
+  )
 }
