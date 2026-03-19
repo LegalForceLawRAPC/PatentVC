@@ -1,18 +1,19 @@
-export const formSheets = {
-  spreadsheetIdEnv: "GOOGLE_SHEETS_SPREADSHEET_ID",
-  clientEmailEnv: "GOOGLE_SHEETS_CLIENT_EMAIL",
-  privateKeyEnv: "GOOGLE_SHEETS_PRIVATE_KEY",
-  contactSheetTitle: "Contact Leads",
-  applySheetTitle: "Apply Leads",
-} as const
-
 export type LeadFormType = "contact" | "apply"
 
 export type LeadSubmission = {
   formType: LeadFormType
-  name?: string
+  name: string
   email: string
-  message?: string
-  fileName?: string
+  message: string
   source: string
 }
+
+export const googleFormConfig = {
+  actionUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLSdc00SlD2HR4fnlbr-jk9EhMXP3sJ86M8gnJIxb1jidTXGJjQ/formResponse",
+  fields: {
+    name: "entry.1235828277",
+    email: "entry.825220065",
+    message: "entry.1318583536",
+  },
+} as const

@@ -5,7 +5,7 @@ export const investPage = {
   description:
     "We deliver robust returns to Limited Partners (LPs) over the next decade by empowering our portfolio companies to lead in the evolving landscape of AI and autonomous technologies",
   primaryCta: { label: "Apply as Limited Partner", href: "/apply" },
-  secondaryCta: { label: "View Deal Memo", href: "#" },
+  secondaryCta: { label: "View Deal Memo", href: "/deal-memo" },
   statLeft: {
     value: "23.2%",
     labelTop: "US VC Exit for",
@@ -64,6 +64,80 @@ export const investPage = {
       title: "Securitization of IP",
       description:
         "We help our portfolio companies to use their intellectual property as collateral for financing, providing novel liquidity solutions.",
+    },
+  ],
+} as const
+
+export const dealMemoPage = {
+  cardLabel: "Deal memo",
+  cardTitleStart: "Join PatentVC's Pioneering",
+  cardTitleHighlight: "Venture Fund Raise",
+  cardCta: { label: "Apply as Limited Partner", href: "/apply" },
+  sections: [
+    {
+      title: "Investment opportunity",
+      paragraphs: [
+        "Welcome to an exclusive invitation to be part of something groundbreaking with PatentVC, a visionary venture capital firm, and a full-fledged law firm. As an Arizona Alternative Business Structure (ABS) entity, for the first time ever, LPs have the ability to invest equity capital in a fund that is also backed by a U.S. law firm general partnership. This marks a significant shift in the legal and business landscape, as traditionally, law firms were restricted from providing equity to non-attorneys.",
+        "We are committed to reshaping the landscape of early-stage startup support through revolutionary intellectual property strategies. Our mission is to rewrite the rules of investment, placing founders at the heart of our vision, offering cost-effective, game-changing solutions, and providing top-tier legal expertise.",
+      ],
+      metrics: [
+        { label: "Fund Size", value: "$5,000,000" },
+        { label: "Minimum Investment", value: "$100,000 per Limited Partner (\"LP\")" },
+      ],
+    },
+    {
+      title: "Our Vision: Redefining Startup Investment with Legal Excellence",
+      paragraphs: [
+        "PatentVC isn't just another venture capital firm; we are a dynamic spinoff of Trademarkia.com, partnering with Silicon Valley's premier incubators like YCombinator and Series A investors. Our mission is to provide vital support to up-and-coming startups by creating, guarding, and enforcing comprehensive U.S. and global patent and trademark portfolios. We are not just experts in intellectual property, we are a full-fledged law firm with U.S. patent attorneys who write patent applications and litigate them in the United States, Europe, and worldwide. By ensuring the holistic protection of intellectual property, PatentVC is at the forefront of nurturing innovation and safeguarding the interests of trailblazing companies. Our commitment? Empowering startups with funding in increments of $50,000 and $100,000, all while building, safeguarding, and enforcing comprehensive U.S. and global patent and trademark portfolios.",
+      ],
+    },
+    {
+      title: "Joining Forces for Innovation",
+      paragraphs: [
+        "Our portfolio companies thrive on the unique synergy between our intellectual property prowess and commercialization expertise, offering an endless source of innovation and investment opportunities. As a law firm, we can provide full-scale legal support to protect your intellectual property, litigating in the United States, Europe, and worldwide.",
+      ],
+    },
+    {
+      title: "Investing in Tomorrow's Success Stories",
+      paragraphs: [
+        "Our pride lies in identifying startups with exceptional intellectual property assets long before they become the darlings of the venture community. By joining us, you gain access to exceptional early growth opportunities and the backing of seasoned venture operators and patent attorneys.",
+      ],
+    },
+    {
+      title: "Empowering the Future of Innovation",
+      paragraphs: [
+        "Our initiatives don't just support startups; they nurture them, equipping budding entrepreneurs with the knowledge and resources to turn their vision into successful startups.",
+      ],
+    },
+    {
+      title: "Scaling the Heights of Early-Stage Ventures",
+      paragraphs: [
+        "We're the go-to for thousands of entrepreneurs every year. With an extensive database of startups, we've cultivated enduring relationships. Our dedication to startup nurturing is in harmony with our mission to magnify early-stage intellectual property ventures.",
+      ],
+    },
+    {
+      title: "Your Path to a World of Opportunity",
+      paragraphs: [
+        "Investing in PatentVC means aligning yourself with a pioneering venture capital firm and a law firm that specializes in intellectual property and has U.S. patent attorneys. We are laser-focused on intellectual property and can litigate and protect your interests in the United States, Europe, and worldwide. We're inviting you to embark on an exciting journey with us to revolutionize startup funding and intellectual property strategies. Together, we can open the door to unique investment opportunities, drive innovation, and protect invaluable intellectual property assets.",
+      ],
+    },
+    {
+      title: "The Journey Begins Here:",
+      bullets: [
+        "Dive into the provided information and reach out with any questions or expressions of interest.",
+        "Pledge your commitment by July 31, 2024, and we'll swiftly provide the essential investment documents and guide you through the investment process.",
+      ],
+    },
+    {
+      title: "Contact Information:",
+      paragraphs: [
+        "For inquiries or to express your interest in this exceptional investment opportunity, please contact: abhi@patentvc.com",
+        "Thank you for considering PatentVC as your investment partner. We're thrilled at the prospect of joining forces with you to redefine early-stage intellectual property investment and provide legal expertise worldwide.",
+        "Sincerely,",
+        "Raj Abhyanker",
+        "General Partner",
+        "PatentVC",
+      ],
     },
   ],
 } as const
@@ -205,9 +279,7 @@ export const applyPage = {
   description:
     "Unlock a $50,000 to $100,000 equity investment for protection and monetization of inventions as patents.",
   formEyebrow: "Get started with your application",
-  formTitle: "Upload a non-confidential executive summary",
-  uploadTitle: "Upload Summary",
-  uploadCaption: "Maximum size: 10MB",
+  formTitle: "Tell us about your startup",
   submitLabel: "Submit",
 } as const
 

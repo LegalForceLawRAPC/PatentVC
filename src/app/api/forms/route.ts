@@ -1,5 +1,5 @@
 import type { LeadSubmission } from "@/_config/forms"
-import { appendLeadSubmission } from "@/lib/google-sheets"
+import { submitLeadToGoogleForm } from "@/lib/google-form"
 
 function isValidSubmission(data: unknown): data is LeadSubmission {
   if (!data || typeof data !== "object") return false
@@ -8,7 +8,9 @@ function isValidSubmission(data: unknown): data is LeadSubmission {
 
   return (
     (candidate.formType === "contact" || candidate.formType === "apply") &&
+    typeof candidate.name === "string" &&
     typeof candidate.email === "string" &&
+    typeof candidate.message === "string" &&
     typeof candidate.source === "string"
   )
 }
@@ -25,7 +27,11 @@ export async function POST(request: Request) {
       return Response.json({ error: "Please enter a valid email" }, { status: 400 })
     }
 
-    await appendLeadSubmission(body)
+    if (!body.name.trim() || !body.message.trim()) {
+      return Response.json({ error: "Please complete all required fields" }, { status: 400 })
+    }
+
+    await submitLeadToGoogleForm(body)
 
     return Response.json({ success: true })
   } catch (error) {

@@ -31,7 +31,9 @@ export function ContactLeadForm() {
         body: JSON.stringify({
           formType: "contact",
           source: "home-contact",
-          ...values,
+          name: values.name,
+          email: values.email,
+          message: values.message,
         }),
       })
 
@@ -42,7 +44,7 @@ export function ContactLeadForm() {
       }
 
       setValues(initialState)
-      setStatus({ type: "success", message: "Thanks - your message was saved." })
+      setStatus({ type: "success", message: "Thanks - your message was submitted." })
     } catch (error) {
       setStatus({
         type: "error",

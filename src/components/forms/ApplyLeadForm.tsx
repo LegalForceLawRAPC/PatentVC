@@ -1,17 +1,22 @@
 "use client"
 
 import type { FormEvent } from "react"
-import { useRef, useState } from "react"
-import { CloudUpload } from "lucide-react"
+import { useState } from "react"
 
+import { FormField } from "@/components/home/FormField"
 import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 
 type StatusState = { type: "idle" | "success" | "error"; message?: string }
 
+const initialValues = {
+  name: "",
+  email: "",
+  message: "",
+}
+
 export function ApplyLeadForm() {
-  const fileInputRef = useRef<HTMLInputElement>(null)
-  const [email, setEmail] = useState("")
-  const [fileName, setFileName] = useState("")
+  const [values, setValues] = useState(initialValues)
   const [status, setStatus] = useState<StatusState>({ type: "idle" })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -26,9 +31,8 @@ export function ApplyLeadForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           formType: "apply",
-          email,
-          fileName,
           source: "apply-page",
+          ...values,
         }),
       })
 
@@ -38,10 +42,8 @@ export function ApplyLeadForm() {
         throw new Error(data.error ?? "Unable to submit form")
       }
 
-      setEmail("")
-      setFileName("")
-      if (fileInputRef.current) fileInputRef.current.value = ""
-      setStatus({ type: "success", message: "Application details were saved." })
+      setValues(initialValues)
+      setStatus({ type: "success", message: "Application details were submitted." })
     } catch (error) {
       setStatus({
         type: "error",
@@ -53,38 +55,48 @@ export function ApplyLeadForm() {
   }
 
   return (
-    <form className="h-[290px]" onSubmit={handleSubmit}>
-      <label className="mt-6 block cursor-pointer rounded-[8px] border border-dashed border-[#afafaf] bg-[#333436] px-6 py-[29px] text-center text-white">
-        <CloudUpload className="mx-auto size-[33px] text-white" strokeWidth={1.8} />
-        <div className="mt-4 font-sans text-[14px] font-bold text-white">Upload Summary</div>
-        <div className="text-[12px] text-[#808080]">{fileName || "Maximum size: 10MB"}</div>
-        <input
-          ref={fileInputRef}
-          type="file"
-          className="sr-only"
-          onChange={(event) => setFileName(event.target.files?.[0]?.name ?? "")}
+    <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
+      <FormField label="Name*">
+        <Input
+          required
+          value={values.name}
+          onChange={(event) => setValues((current) => ({ ...current, name: event.target.value }))}
+          placeholder="Enter Name"
+          className="h-[44px] rounded-[8px] border-[#494949] bg-[#333436] px-[19px] text-[12px] text-white placeholder:text-[#757575]"
         />
-      </label>
+      </FormField>
 
-      <Input
-        type="email"
-        required
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
-        placeholder="Enter Email"
-        className="mt-4 h-[44px] rounded-[8px] border-[#494949] bg-[#333436] px-[19px] text-[12px] text-white placeholder:text-[#757575]"
-      />
+      <FormField label="Email*">
+        <Input
+          type="email"
+          required
+          value={values.email}
+          onChange={(event) => setValues((current) => ({ ...current, email: event.target.value }))}
+          placeholder="Enter Email"
+          className="h-[44px] rounded-[8px] border-[#494949] bg-[#333436] px-[19px] text-[12px] text-white placeholder:text-[#757575]"
+        />
+      </FormField>
+
+      <FormField label="Message*">
+        <Textarea
+          required
+          value={values.message}
+          onChange={(event) => setValues((current) => ({ ...current, message: event.target.value }))}
+          placeholder="Enter message"
+          className="min-h-[118px] rounded-[8px] border-[#494949] bg-[#333436] px-[19px] py-[14px] text-[12px] text-white placeholder:text-[#757575]"
+        />
+      </FormField>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-8 inline-flex h-[52px] w-[117px] items-center justify-center rounded-[8px] bg-[#f5744c] font-sans text-[12px] font-bold text-white transition hover:bg-[#f8845f] disabled:cursor-not-allowed disabled:opacity-70"
+        className="mt-6 inline-flex h-[52px] w-[117px] items-center justify-center rounded-[8px] bg-[#f5744c] font-sans text-[12px] font-bold text-white transition hover:bg-[#f8845f] disabled:cursor-not-allowed disabled:opacity-70"
       >
-        {isSubmitting ? "Saving..." : "Submit"}
+        {isSubmitting ? "Sending..." : "Submit"}
       </button>
 
       {status.message ? (
-        <p className={status.type === "error" ? "mt-3 text-xs text-red-500" : "mt-3 text-xs text-emerald-400"}>{status.message}</p>
+        <p className={status.type === "error" ? "text-xs text-red-500" : "text-xs text-emerald-400"}>{status.message}</p>
       ) : null}
     </form>
   )
