@@ -244,6 +244,33 @@ export const teamPage = {
         "Most notably, Michael worked as a judicial intern for Senior Judge Susan R. Bolton of the United States District Court for the District of Arizona. Michael is also a professor of law at Arizona State University.",
       ],
     },
+    {
+      name: "Jonathan Lilo Bitumba",
+      role: "Chief Financial Officer and Investment Strategist",
+      image: "/jonathan.png",
+      highlighted: false,
+      email: undefined,
+      phone: undefined,
+      paragraphs: [
+        "Jonathan Lilo Bitumba is the Chief Financial Officer and Investment Strategist at Trademarkia. Prior to joining the firm, Jonathan built his career across management consultancy and corporate finance, with experience spanning AB InBev and Walmart Massmart, where he developed deep expertise in financial strategy, capital allocation, and multi-entity operations across multiple jurisdictions.",
+        "Jonathan holds an MBA from the Gordon Institute of Business Science (GIBS), specialising in Entrepreneurship and Corporate Finance, and is a CFA charterholder. He is currently completing his MSc in Finance at Fordham University's Gabelli School of Business in New York and will commence his doctoral studies at the University of Edinburgh Business School later this year.",
+        "At Trademarkia, he oversees financial strategy, venture investment structuring, and capital deployment across the firm and its venture initiatives.",
+      ],
+    },
+    {
+      name: "Amien Gassiep",
+      role: "Governance, Risk, and Audit Strategist",
+      image: "/amien.jpeg",
+      highlighted: false,
+      email: undefined,
+      phone: undefined,
+      paragraphs: [
+        "Investors don't lose money because of bad ideas. They lose it because of bad controls. Amien Gassiep exists to make sure that never happens. With 20 years of governance, risk, and audit leadership across Big 4, JSE-listed entities, and multinationals, Amien doesn't just protect capital. He builds the infrastructure that makes companies worth investing in.",
+        "Amien holds an MBA and is CISA certified. He has built 8 audit functions from scratch, recovered $40 million, overseen operations across 7 countries, caught fraud, transformed cultures, and established enduring control functions.",
+        "From forensic investigations to board-level governance, from AI-powered audit automation to full operational oversight across seven international offices, Amien has consistently been handed greater responsibility because his results demanded it. At PwC. At OneLogix. At Redefine Properties. At Trademarkia. The pattern is always the same: he arrives, he builds, he delivers.",
+        "He speaks the language of founders, boards, and investors equally. He spots what due diligence misses. He creates governance that scales without strangling growth. And he integrates AI into financial oversight before most organizations know they need it. He is not a compliance checkbox. He is a value creation engine. The best VC portfolios don't wait for a crisis to find someone like Amien. The smart ones make sure he's already in the room.",
+      ],
+    },
   ],
 } as const
 

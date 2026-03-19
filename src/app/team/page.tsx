@@ -33,7 +33,13 @@ export default function TeamRoute() {
           <div key={member.name} className="rounded-[20px] bg-[#1d1e20] px-[60px] py-[40px]">
             <div className="grid gap-8 lg:grid-cols-[236px_1fr] lg:gap-[72px]">
               <div>
-                <Image src={member.image} alt={member.name} width={236} height={296} className="h-[296px] w-[236px] rounded-[10px] object-cover" />
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={236}
+                  height={296}
+                  className={`h-[296px] w-[236px] rounded-[10px] object-cover ${member.name === "Amien Gassiep" ? "object-top" : "object-center"}`}
+                />
               </div>
 
               <div>
