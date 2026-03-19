@@ -89,7 +89,8 @@ export function DealMemoRoutePage() {
                 {"paragraphs" in section ? (
                   <div className="mt-[28px] space-y-[24px] text-[15px] leading-[1.65] text-[#e8e8e8] lg:text-[14px] lg:leading-[1.6]">
                     {section.paragraphs.map((paragraph, index) => {
-                      const isEmailLine = paragraph.includes("abhi@patentvc.com");
+                      const isEmailLine =
+                        paragraph.includes("abhi@patentvc.com");
                       const isSignature =
                         section.title === "Contact Information:" && index >= 2;
 
