@@ -1,37 +1,37 @@
 export type NavItem = {
-  label: string
-  href: string
-}
+  label: string;
+  href: string;
+};
 
 export type Metric = {
-  value: string
-  label: string
-}
+  value: string;
+  label: string;
+};
 
 export type Service = {
-  icon: "trending-up" | "shield" | "sparkles" | "flame"
-  title: string
-  description: string
-}
+  icon: "trending-up" | "shield" | "sparkles" | "flame";
+  title: string;
+  description: string;
+};
 
 export type Reason = {
-  title: string
-  description: string
-}
+  title: string;
+  description: string;
+};
 
 export type FocusArea = {
-  title: string
-  description: string
-  bg: string
-  accent: string
-}
+  title: string;
+  description: string;
+  bg: string;
+  accent: string;
+};
 
 export type CompanyLogo = {
-  src: string
-  alt: string
-  width: number
-  height: number
-}
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
 
 export const navItems: NavItem[] = [
   { label: "For Limited Partners", href: "#" },
@@ -39,14 +39,14 @@ export const navItems: NavItem[] = [
   { label: "Why Us?", href: "#why-us" },
   { label: "Our Team", href: "#our-team" },
   { label: "About Us", href: "#footer" },
-]
+];
 
 export const metrics: Metric[] = [
   { value: "1000+", label: "Granted Patents" },
   { value: "2000+", label: "Filed and Pending Patents" },
   { value: "300+", label: "International Patents" },
   { value: "500+", label: "Design Patents" },
-]
+];
 
 export const services: Service[] = [
   {
@@ -73,7 +73,7 @@ export const services: Service[] = [
     description:
       "We assist founders, venture capitalists, banks to securitize down rounds through IP strategy and protection, and confidential liquidation of assets for the benefit of creditors.",
   },
-]
+];
 
 export const reasons: Reason[] = [
   {
@@ -96,7 +96,7 @@ export const reasons: Reason[] = [
     description:
       "We offer personalized consultations to assess your intellectual property portfolio and goals.",
   },
-]
+];
 
 export const focusAreas: FocusArea[] = [
   {
@@ -123,21 +123,41 @@ export const focusAreas: FocusArea[] = [
     bg: "bg-[#ffebed]",
     accent: "text-[#db4554]",
   },
-]
+];
 
 export const firstCompanyLogos: CompanyLogo[] = [
   { src: "/patentvc/apple.png", alt: "Apple", width: 29, height: 36 },
   { src: "/patentvc/ge.png", alt: "General Electric", width: 40, height: 40 },
   { src: "/patentvc/ebay.png", alt: "eBay", width: 76, height: 31 },
   { src: "/patentvc/netapp.png", alt: "NetApp", width: 124, height: 34 },
-  { src: "/patentvc/texas-instruments.png", alt: "Texas Instruments", width: 124, height: 62 },
-]
+  {
+    src: "/patentvc/texas-instruments.png",
+    alt: "Texas Instruments",
+    width: 124,
+    height: 62,
+  },
+];
 
 export const secondCompanyLogos: CompanyLogo[] = [
-  { src: "/patentvc/trademarkia.png", alt: "Trademarkia", width: 110, height: 16 },
-  { src: "/patentvc/slw.png", alt: "Schwegman Lundberg", width: 113, height: 22 },
-  { src: "/patentvc/bstz.png", alt: "Blakely Sokoloff Taylor and Zafman", width: 58, height: 53 },
-]
+  {
+    src: "/patentvc/trademarkia.png",
+    alt: "Trademarkia",
+    width: 110,
+    height: 16,
+  },
+  {
+    src: "/patentvc/slw.png",
+    alt: "Schwegman Lundberg",
+    width: 113,
+    height: 22,
+  },
+  {
+    src: "/patentvc/bstz.png",
+    alt: "Blakely Sokoloff Taylor and Zafman",
+    width: 58,
+    height: 53,
+  },
+];
 
 export const homepageContent = {
   hero: {
@@ -192,9 +212,9 @@ export const homepageContent = {
   },
   address: {
     title: "Visit Us at",
-    line1: "1580 West El Camino Real, Suite 10,",
-    line2: "Mountain View, Bay Area CA 94040",
-    mapsHref: "https://maps.app.goo.gl/ozN2o8DYwLQwfsZZA",
+    line1: "4218 E Wilshire",
+    line2: "Dr Phoenix AZ 85008",
+    mapsHref: "https://maps.app.goo.gl/X3VRQYyQfWQYfrr76",
     mapsLabel: "View on Google Maps",
   },
   footer: {
@@ -211,4 +231,4 @@ export const homepageContent = {
     ctaLabel: "Apply Now",
     ctaHref: "/apply",
   },
-} as const
+} as const;
