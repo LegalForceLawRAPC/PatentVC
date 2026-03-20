@@ -134,12 +134,15 @@ export default function DealMemoRoute() {
                   </div>
                 ) : null}
 
-                {"bullets" in section ? (
+                {"bullets" in section && Array.isArray(section.bullets) ? (
                   <ul className="mt-[24px] space-y-[18px] text-[15px] leading-[1.65] text-[#e8e8e8] lg:text-[14px] lg:leading-[1.6]">
-                    {section.bullets.map((bullet) => (
-                      <li key={bullet} className="flex gap-3">
+                    {(section.bullets as unknown[]).map((bullet, idx) => (
+                      <li
+                        key={typeof bullet === "string" ? bullet : idx}
+                        className="flex gap-3"
+                      >
                         <span className="mt-[11px] block size-[6px] shrink-0 rounded-full bg-[#ffcba7]" />
-                        <span>{bullet}</span>
+                        <span>{String(bullet)}</span>
                       </li>
                     ))}
                   </ul>
