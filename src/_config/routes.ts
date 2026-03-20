@@ -66,7 +66,7 @@ export const investPage = {
         "We help our portfolio companies to use their intellectual property as collateral for financing, providing novel liquidity solutions.",
     },
   ],
-} as const
+} as const;
 
 export const dealMemoPage = {
   cardLabel: "Deal memo",
@@ -82,7 +82,10 @@ export const dealMemoPage = {
       ],
       metrics: [
         { label: "Fund Size", value: "$5,000,000" },
-        { label: "Minimum Investment", value: "$100,000 per Limited Partner (\"LP\")" },
+        {
+          label: "Minimum Investment",
+          value: '$100,000 per Limited Partner ("LP")',
+        },
       ],
     },
     {
@@ -122,16 +125,9 @@ export const dealMemoPage = {
       ],
     },
     {
-      title: "The Journey Begins Here:",
-      bullets: [
-        "Dive into the provided information and reach out with any questions or expressions of interest.",
-        "Pledge your commitment by July 31, 2024, and we'll swiftly provide the essential investment documents and guide you through the investment process.",
-      ],
-    },
-    {
       title: "Contact Information:",
       paragraphs: [
-        "For inquiries or to express your interest in this exceptional investment opportunity, please contact: abhi@patentvc.com",
+        "For inquiries or to express your interest in this exceptional investment opportunity, please contact: raj@patentvc.com",
         "Thank you for considering PatentVC as your investment partner. We're thrilled at the prospect of joining forces with you to redefine early-stage intellectual property investment and provide legal expertise worldwide.",
         "Sincerely,",
         "Raj Abhyanker",
@@ -140,7 +136,7 @@ export const dealMemoPage = {
       ],
     },
   ],
-} as const
+} as const;
 
 export const focusAreasPage = {
   titleStart: "We invest in",
@@ -214,7 +210,7 @@ export const focusAreasPage = {
       icon: "bolt",
     },
   ],
-} as const
+} as const;
 
 export const teamPage = {
   title: "Our Team",
@@ -272,7 +268,7 @@ export const teamPage = {
       ],
     },
   ],
-} as const
+} as const;
 
 export const aboutPage = {
   title: "About Us",
@@ -283,7 +279,8 @@ export const aboutPage = {
   ],
   locationsTitle: "Our",
   locationsHighlight: "Locations",
-  locationsSubtitle: "We are based in Mountain View California and Tempe Arizona",
+  locationsSubtitle:
+    "We are based in Mountain View California and Tempe Arizona",
   locations: [
     {
       title: "PatentVC (Mountain View)",
@@ -298,7 +295,7 @@ export const aboutPage = {
       line2: "Tempe Arizona 85252",
     },
   ],
-} as const
+} as const;
 
 export const applyPage = {
   titleStart: "Apply to",
@@ -308,7 +305,7 @@ export const applyPage = {
   formEyebrow: "Get started with your application",
   formTitle: "Tell us about your startup",
   submitLabel: "Submit",
-} as const
+} as const;
 
 export const consultPage = {
   titleStart: "Schedule a",
@@ -321,4 +318,4 @@ export const consultPage = {
     phone: "+1 (650) 965-8531",
     image: "/patentvc/consult-raj.png",
   },
-} as const
+} as const;

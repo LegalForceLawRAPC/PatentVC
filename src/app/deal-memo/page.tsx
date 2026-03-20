@@ -1,18 +1,19 @@
-import type { Metadata } from "next"
-import Link from "next/link"
+import type { Metadata } from "next";
+import Link from "next/link";
 
-import { dealMemoPage } from "@/_config/routes"
+import { dealMemoPage } from "@/_config/routes";
 
 export const metadata: Metadata = {
   title: "Deal Memo",
-  description: "Review PatentVC's deal memo and limited partner investment opportunity details.",
+  description:
+    "Review PatentVC's deal memo and limited partner investment opportunity details.",
   alternates: {
     canonical: "/deal-memo",
   },
-}
+};
 
 export default function DealMemoRoute() {
-  const [introSection, ...restSections] = dealMemoPage.sections
+  const [introSection, ...restSections] = dealMemoPage.sections;
 
   return (
     <>
@@ -39,15 +40,22 @@ export default function DealMemoRoute() {
             />
 
             <div className="relative z-10 max-w-[420px]">
-              <div className="font-gilroy-bold text-[16px] leading-6 text-white/95">{dealMemoPage.cardLabel}</div>
+              <div className="font-gilroy-bold text-[16px] leading-6 text-white/95">
+                {dealMemoPage.cardLabel}
+              </div>
 
               <h2 className="mt-[26px] font-gilroy-bold text-[38px] leading-[1.08] tracking-[-0.03em] text-white lg:text-[44px]">
                 {dealMemoPage.cardTitleStart}
                 <br />
-                <span className="text-[#ffcba7]">{dealMemoPage.cardTitleHighlight}</span>
+                <span className="text-[#ffcba7]">
+                  {dealMemoPage.cardTitleHighlight}
+                </span>
               </h2>
 
-              <Link href={dealMemoPage.cardCta.href} className="mt-[54px] inline-flex h-[72px] items-center justify-center rounded-[16px] bg-[#f5744c] px-[34px] font-gilroy-bold text-[18px] text-white transition hover:bg-[#f8845f]">
+              <Link
+                href={dealMemoPage.cardCta.href}
+                className="mt-[54px] inline-flex h-[72px] items-center justify-center rounded-[16px] bg-[#f5744c] px-[34px] font-gilroy-bold text-[18px] text-white transition hover:bg-[#f8845f]"
+              >
                 {dealMemoPage.cardCta.label}
               </Link>
             </div>
@@ -56,7 +64,9 @@ export default function DealMemoRoute() {
 
         <div className="pt-[6px] lg:max-w-[548px]">
           <div>
-            <h1 className="font-gilroy-bold text-[34px] leading-[1.18] tracking-[-0.02em] text-white">{introSection.title}</h1>
+            <h1 className="font-gilroy-bold text-[34px] leading-[1.18] tracking-[-0.02em] text-white">
+              {introSection.title}
+            </h1>
 
             <div className="mt-[28px] space-y-[30px] text-[15px] leading-[1.65] text-[#e8e8e8] lg:text-[14px] lg:leading-[1.6]">
               {introSection.paragraphs?.map((paragraph) => (
@@ -67,8 +77,12 @@ export default function DealMemoRoute() {
             <div className="mt-[42px] grid gap-8 sm:grid-cols-2 sm:gap-12">
               {introSection.metrics?.map((metric) => (
                 <div key={metric.label}>
-                  <div className="text-[18px] leading-7 text-white">{metric.label}</div>
-                  <div className="mt-[4px] font-gilroy-bold text-[22px] leading-[1.35] text-white">{metric.value}</div>
+                  <div className="text-[18px] leading-7 text-white">
+                    {metric.label}
+                  </div>
+                  <div className="mt-[4px] font-gilroy-bold text-[22px] leading-[1.35] text-white">
+                    {metric.value}
+                  </div>
                 </div>
               ))}
             </div>
@@ -77,30 +91,45 @@ export default function DealMemoRoute() {
           <div className="mt-[64px] space-y-[64px]">
             {restSections.map((section) => (
               <article key={section.title}>
-                <h2 className="font-gilroy-bold text-[30px] leading-[1.24] tracking-[-0.02em] text-white">{section.title}</h2>
+                <h2 className="font-gilroy-bold text-[30px] leading-[1.24] tracking-[-0.02em] text-white">
+                  {section.title}
+                </h2>
 
                 {"paragraphs" in section ? (
                   <div className="mt-[28px] space-y-[24px] text-[15px] leading-[1.65] text-[#e8e8e8] lg:text-[14px] lg:leading-[1.6]">
                     {section.paragraphs.map((paragraph, index) => {
-                      const isEmailLine = paragraph.includes("abhi@patentvc.com")
-                      const isSignature = section.title === "Contact Information:" && index >= 2
+                      const isEmailLine =
+                        paragraph.includes("raj@patentvc.com");
+                      const isSignature =
+                        section.title === "Contact Information:" && index >= 2;
 
                       if (isEmailLine) {
                         return (
                           <p key={paragraph}>
-                            For inquiries or to express your interest in this exceptional investment opportunity, please contact:{" "}
-                            <a href="mailto:abhi@patentvc.com" className="text-[#ffcba7] underline underline-offset-4">
-                              abhi@patentvc.com
+                            For inquiries or to express your interest in this
+                            exceptional investment opportunity, please contact:{" "}
+                            <a
+                              href="mailto:raj@patentvc.com"
+                              className="text-[#ffcba7] underline underline-offset-4"
+                            >
+                              raj@patentvc.com
                             </a>
                           </p>
-                        )
+                        );
                       }
 
                       return (
-                        <p key={paragraph} className={isSignature ? "font-gilroy-semibold text-white" : undefined}>
+                        <p
+                          key={paragraph}
+                          className={
+                            isSignature
+                              ? "font-gilroy-semibold text-white"
+                              : undefined
+                          }
+                        >
                           {paragraph}
                         </p>
-                      )
+                      );
                     })}
                   </div>
                 ) : null}
@@ -121,5 +150,5 @@ export default function DealMemoRoute() {
         </div>
       </section>
     </>
-  )
+  );
 }
